@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 223 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 223 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 263 85% 65%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 263 85% 65%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 263 85% 65%;
+
+    --radius: 0.75rem;
+
+    /* Custom analytics theme */
+    --gradient-primary: linear-gradient(135deg, hsl(263 85% 65%), hsl(220 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280 85% 60%), hsl(320 85% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(200 100% 60%), hsl(180 100% 65%));
+    
+    --chart-1: 220 100% 70%;
+    --chart-2: 280 85% 60%;
+    --chart-3: 200 100% 60%;
+    --chart-4: 320 85% 65%;
+    --chart-5: 180 100% 65%;
+    
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    --shadow-glow: 0 0 40px hsl(263 85% 65% / 0.3);
+    --shadow-soft: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode uses same colors as root for consistency */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
