@@ -4,7 +4,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { DateRangePicker } from '@/components/DateRangePicker';
-import { GitHubTokenManager } from '@/components/GitHubTokenManager';
+import { RepositoryInfo } from '@/components/RepositoryInfo';
+import { CommitQualityAnalysis } from '@/components/CommitQualityAnalysis';
+import { GitActivityAnalysis } from '@/components/GitActivityAnalysis';
 import { 
   GitCommit, 
   Users, 
@@ -298,6 +300,9 @@ export function CommitAnalytics({ team, githubToken }: CommitAnalyticsProps) {
         </div>
       </div>
 
+      {/* Repository Information */}
+      <RepositoryInfo githubUrl={team.GitHubURL} githubToken={githubToken} />
+
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="relative overflow-hidden bg-card/50 backdrop-blur-glass border-glass-border">
@@ -457,6 +462,19 @@ export function CommitAnalytics({ team, githubToken }: CommitAnalyticsProps) {
           </div>
         </Card>
       </div>
+
+      {/* Commit Quality Analysis */}
+      <CommitQualityAnalysis 
+        githubUrl={team.GitHubURL} 
+        githubToken={githubToken} 
+        commits={analytics.recentCommits} 
+      />
+
+      {/* Git Activity Analysis */}
+      <GitActivityAnalysis 
+        githubUrl={team.GitHubURL} 
+        githubToken={githubToken} 
+      />
     </div>
   );
 }
